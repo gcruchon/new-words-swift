@@ -1,0 +1,118 @@
+//
+//  NewWordViewController.swift
+//  NewWords
+//
+//  Created by Gilles Cruchon on 04/02/2018.
+//  Copyright © 2018 Gilles Cruchon. All rights reserved.
+//
+
+import os.log
+import UIKit
+
+class NewWordViewController: UIViewController, UITextFieldDelegate {
+    
+    //MARK: Properties
+    @IBOutlet weak var newWordTextField: UITextField!
+    @IBOutlet weak var definitionTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var newWord: NewWord?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        newWordTextField.delegate = self
+        definitionTextField.delegate = self
+        
+        // Set up views if editing an existing Meal.
+        if let newWord = newWord {
+            navigationItem.title = newWord.word
+            newWordTextField.text   = newWord.word
+            definitionTextField.text = newWord.definition
+        }
+        
+         // Enable the Save button only if the text field has a valid New Word.
+        updateSaveButtonState()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //TODO
+        updateSaveButtonState()
+        navigationItem.title = getTitleFromField(newWordTextField)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        updateSaveButtonState()
+    }
+    
+    //MARK: Navigation
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            if let owningNavigationController = navigationController{
+                owningNavigationController.popViewController(animated: true)
+            } else {
+                fatalError("The NewWordViewController is not inside a navigation controller.")
+            }
+        }
+    }
+    
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let word = newWordTextField.text ?? ""
+        let definition = definitionTextField.text ?? ""
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        newWord = NewWord(word: word, definition: definition)
+    }
+
+    //MARK: Actions
+    
+    
+    //MARK: Private methods
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let word = newWordTextField.text ?? ""
+        let definition = definitionTextField.text ?? ""
+        
+        saveButton.isEnabled = !word.isEmpty && !definition.isEmpty
+    }
+    
+    private func getTitleFromField(_ textField: UITextField) -> String{
+        let title = textField.text ?? ""
+        if(title.isEmpty) {
+            return "Add a new word"
+        } else {
+            return title;
+        }
+    }
+}
+

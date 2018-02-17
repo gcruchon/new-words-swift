@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FF274A5C2027175200B3E0B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A5B2027175200B3E0B2 /* AppDelegate.swift */; };
-		FF274A5E2027175200B3E0B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A5D2027175200B3E0B2 /* ViewController.swift */; };
+		FF274A5E2027175200B3E0B2 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A5D2027175200B3E0B2 /* NewWordViewController.swift */; };
 		FF274A612027175200B3E0B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF274A5F2027175200B3E0B2 /* Main.storyboard */; };
 		FF274A632027175200B3E0B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF274A622027175200B3E0B2 /* Assets.xcassets */; };
 		FF274A662027175200B3E0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF274A642027175200B3E0B2 /* LaunchScreen.storyboard */; };
 		FF274A712027175200B3E0B2 /* NewWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A702027175200B3E0B2 /* NewWordsTests.swift */; };
 		FF274A7C2027723300B3E0B2 /* NewWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A7B2027723300B3E0B2 /* NewWord.swift */; };
+		FF274A7E20277C0200B3E0B2 /* NewWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A7D20277C0200B3E0B2 /* NewWordTableViewCell.swift */; };
+		FF274A802027802A00B3E0B2 /* NewWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A7F2027802A00B3E0B2 /* NewWordTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +31,7 @@
 /* Begin PBXFileReference section */
 		FF274A582027175200B3E0B2 /* NewWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF274A5B2027175200B3E0B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF274A5D2027175200B3E0B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF274A5D2027175200B3E0B2 /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
 		FF274A602027175200B3E0B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF274A622027175200B3E0B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF274A652027175200B3E0B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		FF274A702027175200B3E0B2 /* NewWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsTests.swift; sourceTree = "<group>"; };
 		FF274A722027175200B3E0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF274A7B2027723300B3E0B2 /* NewWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWord.swift; sourceTree = "<group>"; };
+		FF274A7D20277C0200B3E0B2 /* NewWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordTableViewCell.swift; sourceTree = "<group>"; };
+		FF274A7F2027802A00B3E0B2 /* NewWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				FF274A5B2027175200B3E0B2 /* AppDelegate.swift */,
-				FF274A5D2027175200B3E0B2 /* ViewController.swift */,
+				FF274A5D2027175200B3E0B2 /* NewWordViewController.swift */,
 				FF274A5F2027175200B3E0B2 /* Main.storyboard */,
+				FF274A7F2027802A00B3E0B2 /* NewWordTableViewController.swift */,
+				FF274A7D20277C0200B3E0B2 /* NewWordTableViewCell.swift */,
 				FF274A7B2027723300B3E0B2 /* NewWord.swift */,
 				FF274A622027175200B3E0B2 /* Assets.xcassets */,
 				FF274A642027175200B3E0B2 /* LaunchScreen.storyboard */,
@@ -203,7 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF274A7C2027723300B3E0B2 /* NewWord.swift in Sources */,
-				FF274A5E2027175200B3E0B2 /* ViewController.swift in Sources */,
+				FF274A5E2027175200B3E0B2 /* NewWordViewController.swift in Sources */,
+				FF274A7E20277C0200B3E0B2 /* NewWordTableViewCell.swift in Sources */,
+				FF274A802027802A00B3E0B2 /* NewWordTableViewController.swift in Sources */,
 				FF274A5C2027175200B3E0B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
