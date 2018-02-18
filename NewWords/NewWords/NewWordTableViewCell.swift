@@ -12,7 +12,7 @@ class NewWordTableViewCell: UITableViewCell {
 
     //MARK: Properties
     @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var definitionLabel: UILabel!
+    @IBOutlet weak var definitionTextView: UITextView!
     
     
     override func awakeFromNib() {

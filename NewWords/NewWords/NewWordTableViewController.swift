@@ -57,7 +57,7 @@ class NewWordTableViewController: UITableViewController {
         // Configure the cell...
         let newWord = newWords[indexPath.row]
         cell.wordLabel.text = newWord.word
-        cell.definitionLabel.text = newWord.definition
+        cell.definitionTextView.text = newWord.definition
 
         return cell
     }
