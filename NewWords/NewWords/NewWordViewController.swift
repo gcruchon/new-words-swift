@@ -9,11 +9,11 @@
 import os.log
 import UIKit
 
-class NewWordViewController: UIViewController, UITextFieldDelegate {
+class NewWordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     //MARK: Properties
     @IBOutlet weak var newWordTextField: UITextField!
-    @IBOutlet weak var definitionTextField: UITextField!
+    @IBOutlet weak var definitionTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
@@ -26,13 +26,13 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         newWordTextField.delegate = self
-        definitionTextField.delegate = self
-        
+        definitionTextView.delegate = self
+
         // Set up views if editing an existing NewWord.
         if let newWord = newWord {
             navigationItem.title = newWord.word
             newWordTextField.text   = newWord.word
-            definitionTextField.text = newWord.definition
+            definitionTextView.text = newWord.definition
         }
         
          // Enable the Save button only if the text field has a valid New Word.
@@ -59,6 +59,11 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
         updateSaveButtonState()
+    }
+    
+    //MARK: UITextViewDelegate
+    func textViewDidEndEditing(_ textView: UITextView) {
+        os_log("The text has changed.", log: OSLog.default, type: .debug)
     }
     
     //MARK: Navigation
@@ -89,7 +94,7 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         }
         
         let word = newWordTextField.text ?? ""
-        let definition = definitionTextField.text ?? ""
+        let definition = definitionTextView.text ?? ""
         // Set the NewWord to be passed to NewWordTableViewController after the unwind segue.
         newWord = NewWord(word: word, definition: definition)
     }
@@ -101,7 +106,7 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let word = newWordTextField.text ?? ""
-        let definition = definitionTextField.text ?? ""
+        let definition = definitionTextView.text ?? ""
         
         saveButton.isEnabled = !word.isEmpty && !definition.isEmpty
     }

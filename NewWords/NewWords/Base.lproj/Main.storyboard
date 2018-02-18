@@ -86,17 +86,17 @@
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the definition" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G24-Lo-Uv2">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter defintion here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZA8-z6-Hwh">
                                         <rect key="frame" x="0.0" y="38" width="359" height="162"/>
-                                        <nil key="textColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="G24-Lo-Uv2" firstAttribute="leading" secondItem="nad-9D-SgY" secondAttribute="leading" id="E7f-S7-rfC"/>
-                                    <constraint firstAttribute="trailing" secondItem="G24-Lo-Uv2" secondAttribute="trailing" id="bzh-oI-Jep"/>
                                     <constraint firstItem="rWy-OU-6VA" firstAttribute="leading" secondItem="nad-9D-SgY" secondAttribute="leading" id="dOv-cE-t97"/>
+                                    <constraint firstItem="ZA8-z6-Hwh" firstAttribute="leading" secondItem="nad-9D-SgY" secondAttribute="leading" id="dg3-z7-ISq"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZA8-z6-Hwh" secondAttribute="trailing" id="eoQ-78-oQe"/>
                                     <constraint firstAttribute="trailing" secondItem="rWy-OU-6VA" secondAttribute="trailing" id="ruu-Xn-XvS"/>
                                     <constraint firstAttribute="height" constant="200" id="v8T-QE-thN"/>
                                 </constraints>
@@ -123,7 +123,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="definitionTextField" destination="G24-Lo-Uv2" id="8kO-dt-RcK"/>
+                        <outlet property="definitionTextView" destination="ZA8-z6-Hwh" id="fpj-m2-sSc"/>
                         <outlet property="newWordTextField" destination="rWy-OU-6VA" id="hGA-3c-TgF"/>
                         <outlet property="saveButton" destination="NGP-Yg-Vzj" id="d1h-Cv-DV3"/>
                     </connections>
