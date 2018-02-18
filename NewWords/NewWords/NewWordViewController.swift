@@ -36,7 +36,7 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         }
         
          // Enable the Save button only if the text field has a valid New Word.
-        updateSaveButtonState()
+        saveButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
