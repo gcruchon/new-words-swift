@@ -118,7 +118,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="NGP-Yg-Vzj">
                             <connections>
-                                <segue destination="yHm-Lo-2Aj" kind="unwind" unwindAction="unwindToMealListWithSender:" id="Chk-XE-4VN"/>
+                                <segue destination="yHm-Lo-2Aj" kind="unwind" unwindAction="unwindToNewWordListWithSender:" id="Chk-XE-4VN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -17,8 +17,8 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
-     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
-     or constructed as part of adding a new meal.
+     This value is either passed by `NewWordTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new word.
      */
     var newWord: NewWord?
     
@@ -28,7 +28,7 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         newWordTextField.delegate = self
         definitionTextField.delegate = self
         
-        // Set up views if editing an existing Meal.
+        // Set up views if editing an existing NewWord.
         if let newWord = newWord {
             navigationItem.title = newWord.word
             newWordTextField.text   = newWord.word
@@ -64,9 +64,9 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        let isPresentingInAddNewWordMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddNewWordMode {
             dismiss(animated: true, completion: nil)
         } else {
             if let owningNavigationController = navigationController{
@@ -90,7 +90,7 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         
         let word = newWordTextField.text ?? ""
         let definition = definitionTextField.text ?? ""
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        // Set the NewWord to be passed to NewWordTableViewController after the unwind segue.
         newWord = NewWord(word: word, definition: definition)
     }
 

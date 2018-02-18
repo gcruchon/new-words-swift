@@ -11,14 +11,14 @@ import XCTest
 
 class NewWordsTests: XCTestCase {
     
-    //MARK: Meal Class Tests
+    //MARK: NewWord Class Tests
     // Confirm that the NewWord initializer returns a NewWord object when passed valid parameters.
     func testNewWordInitializationSucceeds() {
         let normalNewWord = NewWord.init(word: "Word", definition: "word")
         XCTAssertNotNil(normalNewWord)
     }
     
-    // Confirm that the Meal initialier returns nil when passed a negative rating or an empty name.
+    // Confirm that the NewWord initialier returns nil when passed a negative rating or an empty name.
     func testNewWordInitializationFails() {
         let noWordNewWord = NewWord.init(word: "", definition: "word")
         XCTAssertNil(noWordNewWord)
