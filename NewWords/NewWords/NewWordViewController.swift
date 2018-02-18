@@ -63,7 +63,13 @@ class NewWordViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     //MARK: UITextViewDelegate
     func textViewDidEndEditing(_ textView: UITextView) {
+        os_log("The text did end editing.", log: OSLog.default, type: .debug)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         os_log("The text has changed.", log: OSLog.default, type: .debug)
+        updateSaveButtonState()
+        return true
     }
     
     //MARK: Navigation
