@@ -13,15 +13,20 @@ class NewWordTableViewController: UITableViewController {
     
     //MARK: Properties
     
+    let cellIdentifier = "WordTableViewCell"
     var newWords = [NewWord]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(WordTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
 
-        // Load any saved meals, otherwise load sample data.
+        // Load any saved words, otherwise load sample data.
         if let savedNewWords = loadNewWords() {
             newWords += savedNewWords
         } else {
@@ -49,16 +54,15 @@ class NewWordTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "NewWordTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NewWordTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of NewWordTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WordTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of WordTableViewCell.")
         }
         // Configure the cell...
         let newWord = newWords[indexPath.row]
         cell.wordLabel.text = newWord.word
         cell.definitionLabel.text = newWord.definition
-
+        
         return cell
     }
 
@@ -81,6 +85,12 @@ class NewWordTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowDetail", sender: tableView.cellForRow(at: indexPath))
+    }
+
 
 
     /*
@@ -107,14 +117,14 @@ class NewWordTableViewController: UITableViewController {
         
         switch(segue.identifier ?? "") {
             case "AddItem":
-                os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+                os_log("Adding a new word.", log: OSLog.default, type: .debug)
             
             case "ShowDetail":
                 guard let newWordDetailViewController = segue.destination as? NewWordViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
                 }
                 
-                guard let selectedNewWordCell = sender as? NewWordTableViewCell else {
+                guard let selectedNewWordCell = sender as? WordTableViewCell else {
                     fatalError("Unexpected sender: \(String(describing: sender))")
                 }
                 
@@ -131,7 +141,7 @@ class NewWordTableViewController: UITableViewController {
     
     //MARK: Actions
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToNewWordList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewWordViewController, let newWord = sourceViewController.newWord {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
@@ -155,14 +165,14 @@ class NewWordTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleNewWords() {
-        guard let newWord1 = NewWord(word: "Test 1", definition: "Def Test 1") else {
-            fatalError("Unable to instantiate newWord1")
+        guard let newWord1 = NewWord(word: "dictionary", definition: "A book that contains a list of words in alphabetical order and that explains their meanings, or gives a word for them in another language.") else {
+            fatalError("Unable to instantiate 'dictionary'")
         }
-        guard let newWord2 = NewWord(word: "Test 2", definition: "Def Test 2") else {
-            fatalError("Unable to instantiate newWord2")
+        guard let newWord2 = NewWord(word: "new", definition: "Recently created or having started to exist recently.") else {
+            fatalError("Unable to instantiate 'new'")
         }
-        guard let newWord3 = NewWord(word: "Test 3", definition: "Def Test 3") else {
-            fatalError("Unable to instantiate newWord3")
+        guard let newWord3 = NewWord(word: "word", definition: " A single unit of language that has meaning and can be spoken or written.") else {
+            fatalError("Unable to instantiate 'word'")
         }
         newWords += [newWord1, newWord2, newWord3]
     }

@@ -14,38 +14,20 @@
         <scene sceneID="U09-ki-itp">
             <objects>
                 <tableViewController id="9z9-9i-CBa" customClass="NewWordTableViewController" customModule="NewWords" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hsk-N3-qh2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hsk-N3-qh2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewWordTableViewCell" rowHeight="150" id="4aO-Rw-y8x" customClass="NewWordTableViewCell" customModule="NewWords" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WordTableViewCell" id="4aO-Rw-y8x">
+                                <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4aO-Rw-y8x" id="73Q-1u-Fje">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4aO-Rw-y8x" id="73Q-1u-Fje">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izL-HE-ppD">
-                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmI-LR-pRY">
-                                            <rect key="frame" x="16" y="40" width="343" height="99"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="definitionLabel" destination="pmI-LR-pRY" id="D5O-XL-LSS"/>
-                                    <outlet property="wordLabel" destination="izL-HE-ppD" id="ULh-mf-IyM"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="LfD-HH-rCq"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="ATn-yc-5P6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,7 +46,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1T-kI-C0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-456.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-458.39999999999998" y="132.68365817091455"/>
         </scene>
         <!--New word-->
         <scene sceneID="tne-QT-ifu">
@@ -83,20 +65,20 @@
                                             <constraint firstAttribute="height" constant="30" id="RKr-SY-6C1"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the definition" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G24-Lo-Uv2">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter defintion here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZA8-z6-Hwh">
                                         <rect key="frame" x="0.0" y="38" width="359" height="162"/>
-                                        <nil key="textColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="G24-Lo-Uv2" firstAttribute="leading" secondItem="nad-9D-SgY" secondAttribute="leading" id="E7f-S7-rfC"/>
-                                    <constraint firstAttribute="trailing" secondItem="G24-Lo-Uv2" secondAttribute="trailing" id="bzh-oI-Jep"/>
                                     <constraint firstItem="rWy-OU-6VA" firstAttribute="leading" secondItem="nad-9D-SgY" secondAttribute="leading" id="dOv-cE-t97"/>
+                                    <constraint firstItem="ZA8-z6-Hwh" firstAttribute="leading" secondItem="nad-9D-SgY" secondAttribute="leading" id="dg3-z7-ISq"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZA8-z6-Hwh" secondAttribute="trailing" id="eoQ-78-oQe"/>
                                     <constraint firstAttribute="trailing" secondItem="rWy-OU-6VA" secondAttribute="trailing" id="ruu-Xn-XvS"/>
                                     <constraint firstAttribute="height" constant="200" id="v8T-QE-thN"/>
                                 </constraints>
@@ -118,12 +100,12 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="NGP-Yg-Vzj">
                             <connections>
-                                <segue destination="yHm-Lo-2Aj" kind="unwind" unwindAction="unwindToMealListWithSender:" id="Chk-XE-4VN"/>
+                                <segue destination="yHm-Lo-2Aj" kind="unwind" unwindAction="unwindToNewWordListWithSender:" id="Chk-XE-4VN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="definitionTextField" destination="G24-Lo-Uv2" id="8kO-dt-RcK"/>
+                        <outlet property="definitionTextView" destination="ZA8-z6-Hwh" id="fpj-m2-sSc"/>
                         <outlet property="newWordTextField" destination="rWy-OU-6VA" id="hGA-3c-TgF"/>
                         <outlet property="saveButton" destination="NGP-Yg-Vzj" id="d1h-Cv-DV3"/>
                     </connections>
@@ -171,6 +153,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LfD-HH-rCq"/>
+        <segue reference="ATn-yc-5P6"/>
     </inferredMetricsTieBreakers>
 </document>

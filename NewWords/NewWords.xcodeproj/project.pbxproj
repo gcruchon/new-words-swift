@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		193F3FD3D4C7C85C08FE7AAD /* Pods_NewWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9290DCEBD1F14908FBAE45B7 /* Pods_NewWords.framework */; };
+		F3AB75382EFD90A3FE105E37 /* Pods_NewWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B42304EDA0D133BF889D0 /* Pods_NewWordsTests.framework */; };
 		FF274A5C2027175200B3E0B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A5B2027175200B3E0B2 /* AppDelegate.swift */; };
 		FF274A5E2027175200B3E0B2 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A5D2027175200B3E0B2 /* NewWordViewController.swift */; };
 		FF274A612027175200B3E0B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF274A5F2027175200B3E0B2 /* Main.storyboard */; };
@@ -14,8 +16,8 @@
 		FF274A662027175200B3E0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF274A642027175200B3E0B2 /* LaunchScreen.storyboard */; };
 		FF274A712027175200B3E0B2 /* NewWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A702027175200B3E0B2 /* NewWordsTests.swift */; };
 		FF274A7C2027723300B3E0B2 /* NewWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A7B2027723300B3E0B2 /* NewWord.swift */; };
-		FF274A7E20277C0200B3E0B2 /* NewWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A7D20277C0200B3E0B2 /* NewWordTableViewCell.swift */; };
 		FF274A802027802A00B3E0B2 /* NewWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF274A7F2027802A00B3E0B2 /* NewWordTableViewController.swift */; };
+		FF7F4267203E09EB00A82BEA /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F4266203E09EB00A82BEA /* WordTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A0B42304EDA0D133BF889D0 /* Pods_NewWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		861CD4EFCC055CC1066ABF49 /* Pods-NewWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewWordsTests/Pods-NewWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A1839C3B7480C1F9703858E /* Pods-NewWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewWords/Pods-NewWords.debug.xcconfig"; sourceTree = "<group>"; };
+		8A92ED9EE205F5B98366E8EA /* Pods-NewWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewWordsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewWordsTests/Pods-NewWordsTests.release.xcconfig"; sourceTree = "<group>"; };
+		9290DCEBD1F14908FBAE45B7 /* Pods_NewWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94EC608545B20508ACC11AB6 /* Pods-NewWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewWords/Pods-NewWords.release.xcconfig"; sourceTree = "<group>"; };
 		FF274A582027175200B3E0B2 /* NewWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF274A5B2027175200B3E0B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF274A5D2027175200B3E0B2 /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
@@ -40,8 +48,8 @@
 		FF274A702027175200B3E0B2 /* NewWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsTests.swift; sourceTree = "<group>"; };
 		FF274A722027175200B3E0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF274A7B2027723300B3E0B2 /* NewWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWord.swift; sourceTree = "<group>"; };
-		FF274A7D20277C0200B3E0B2 /* NewWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordTableViewCell.swift; sourceTree = "<group>"; };
 		FF274A7F2027802A00B3E0B2 /* NewWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordTableViewController.swift; sourceTree = "<group>"; };
+		FF7F4266203E09EB00A82BEA /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				193F3FD3D4C7C85C08FE7AAD /* Pods_NewWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,18 +65,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AB75382EFD90A3FE105E37 /* Pods_NewWordsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6752849182350AD1B1501827 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9290DCEBD1F14908FBAE45B7 /* Pods_NewWords.framework */,
+				6A0B42304EDA0D133BF889D0 /* Pods_NewWordsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCA0013660E53A1AC74A7F42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A1839C3B7480C1F9703858E /* Pods-NewWords.debug.xcconfig */,
+				94EC608545B20508ACC11AB6 /* Pods-NewWords.release.xcconfig */,
+				861CD4EFCC055CC1066ABF49 /* Pods-NewWordsTests.debug.xcconfig */,
+				8A92ED9EE205F5B98366E8EA /* Pods-NewWordsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF274A4F2027175200B3E0B2 = {
 			isa = PBXGroup;
 			children = (
 				FF274A5A2027175200B3E0B2 /* NewWords */,
 				FF274A6F2027175200B3E0B2 /* NewWordsTests */,
 				FF274A592027175200B3E0B2 /* Products */,
+				BCA0013660E53A1AC74A7F42 /* Pods */,
+				6752849182350AD1B1501827 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,8 +118,8 @@
 				FF274A5B2027175200B3E0B2 /* AppDelegate.swift */,
 				FF274A5D2027175200B3E0B2 /* NewWordViewController.swift */,
 				FF274A5F2027175200B3E0B2 /* Main.storyboard */,
+				FF7F4266203E09EB00A82BEA /* WordTableViewCell.swift */,
 				FF274A7F2027802A00B3E0B2 /* NewWordTableViewController.swift */,
-				FF274A7D20277C0200B3E0B2 /* NewWordTableViewCell.swift */,
 				FF274A7B2027723300B3E0B2 /* NewWord.swift */,
 				FF274A622027175200B3E0B2 /* Assets.xcassets */,
 				FF274A642027175200B3E0B2 /* LaunchScreen.storyboard */,
@@ -112,9 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF274A752027175200B3E0B2 /* Build configuration list for PBXNativeTarget "NewWords" */;
 			buildPhases = (
+				634429A09A5900F161D25693 /* [CP] Check Pods Manifest.lock */,
 				FF274A542027175200B3E0B2 /* Sources */,
 				FF274A552027175200B3E0B2 /* Frameworks */,
 				FF274A562027175200B3E0B2 /* Resources */,
+				911C43EC51F758DA2072DEA6 /* [CP] Embed Pods Frameworks */,
+				5324FD9C390BE0BE645D1453 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF274A782027175200B3E0B2 /* Build configuration list for PBXNativeTarget "NewWordsTests" */;
 			buildPhases = (
+				AF9BD9FB0132F191CDDBEB3E /* [CP] Check Pods Manifest.lock */,
 				FF274A682027175200B3E0B2 /* Sources */,
 				FF274A692027175200B3E0B2 /* Frameworks */,
 				FF274A6A2027175200B3E0B2 /* Resources */,
+				93654BE87B09C5658F14E492 /* [CP] Embed Pods Frameworks */,
+				9EF3A349246DB55B4D2E286E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,14 +241,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5324FD9C390BE0BE645D1453 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewWords/Pods-NewWords-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		634429A09A5900F161D25693 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewWords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		911C43EC51F758DA2072DEA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NewWords/Pods-NewWords-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewWords/Pods-NewWords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93654BE87B09C5658F14E492 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewWordsTests/Pods-NewWordsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF3A349246DB55B4D2E286E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewWordsTests/Pods-NewWordsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF9BD9FB0132F191CDDBEB3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewWordsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF274A542027175200B3E0B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FF274A7C2027723300B3E0B2 /* NewWord.swift in Sources */,
+				FF7F4267203E09EB00A82BEA /* WordTableViewCell.swift in Sources */,
 				FF274A5E2027175200B3E0B2 /* NewWordViewController.swift in Sources */,
-				FF274A7E20277C0200B3E0B2 /* NewWordTableViewCell.swift in Sources */,
 				FF274A802027802A00B3E0B2 /* NewWordTableViewController.swift in Sources */,
 				FF274A5C2027175200B3E0B2 /* AppDelegate.swift in Sources */,
 			);
@@ -363,6 +503,7 @@
 		};
 		FF274A762027175200B3E0B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A1839C3B7480C1F9703858E /* Pods-NewWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +518,7 @@
 		};
 		FF274A772027175200B3E0B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94EC608545B20508ACC11AB6 /* Pods-NewWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -391,6 +533,7 @@
 		};
 		FF274A792027175200B3E0B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 861CD4EFCC055CC1066ABF49 /* Pods-NewWordsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -407,6 +550,7 @@
 		};
 		FF274A7A2027175200B3E0B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A92ED9EE205F5B98366E8EA /* Pods-NewWordsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

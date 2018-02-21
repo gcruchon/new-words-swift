@@ -9,16 +9,16 @@
 import os.log
 import UIKit
 
-class NewWordViewController: UIViewController, UITextFieldDelegate {
+class NewWordViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     //MARK: Properties
     @IBOutlet weak var newWordTextField: UITextField!
-    @IBOutlet weak var definitionTextField: UITextField!
+    @IBOutlet weak var definitionTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
-     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
-     or constructed as part of adding a new meal.
+     This value is either passed by `NewWordTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new word.
      */
     var newWord: NewWord?
     
@@ -26,17 +26,17 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         newWordTextField.delegate = self
-        definitionTextField.delegate = self
-        
-        // Set up views if editing an existing Meal.
+        definitionTextView.delegate = self
+
+        // Set up views if editing an existing NewWord.
         if let newWord = newWord {
             navigationItem.title = newWord.word
             newWordTextField.text   = newWord.word
-            definitionTextField.text = newWord.definition
+            definitionTextView.text = newWord.definition
         }
         
          // Enable the Save button only if the text field has a valid New Word.
-        updateSaveButtonState()
+        saveButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,12 +61,18 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         updateSaveButtonState()
     }
     
+    //MARK: UITextViewDelegate
+    func textViewDidChange(_ textView: UITextView) {
+        resizeTextViewToItsContent(textView)
+        updateSaveButtonState()
+    }
+    
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        let isPresentingInAddNewWordMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddNewWordMode {
             dismiss(animated: true, completion: nil)
         } else {
             if let owningNavigationController = navigationController{
@@ -89,8 +95,8 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
         }
         
         let word = newWordTextField.text ?? ""
-        let definition = definitionTextField.text ?? ""
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        let definition = definitionTextView.text ?? ""
+        // Set the NewWord to be passed to NewWordTableViewController after the unwind segue.
         newWord = NewWord(word: word, definition: definition)
     }
 
@@ -98,10 +104,19 @@ class NewWordViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: Private methods
+    
+    private func resizeTextViewToItsContent(_ textView: UITextView) {
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame
+    }
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let word = newWordTextField.text ?? ""
-        let definition = definitionTextField.text ?? ""
+        let definition = definitionTextView.text ?? ""
         
         saveButton.isEnabled = !word.isEmpty && !definition.isEmpty
     }
