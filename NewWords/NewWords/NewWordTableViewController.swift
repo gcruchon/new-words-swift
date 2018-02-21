@@ -13,10 +13,15 @@ class NewWordTableViewController: UITableViewController {
     
     //MARK: Properties
     
+    let cellIdentifier = "WordTableViewCell"
     var newWords = [NewWord]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(WordTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
@@ -49,16 +54,15 @@ class NewWordTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "NewWordTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NewWordTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of NewWordTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WordTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of WordTableViewCell.")
         }
         // Configure the cell...
         let newWord = newWords[indexPath.row]
         cell.wordLabel.text = newWord.word
-        cell.definitionTextView.text = newWord.definition
-
+        cell.definitionLabel.text = newWord.definition
+        
         return cell
     }
 
@@ -81,6 +85,12 @@ class NewWordTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowDetail", sender: tableView.cellForRow(at: indexPath))
+    }
+
 
 
     /*
@@ -114,7 +124,7 @@ class NewWordTableViewController: UITableViewController {
                     fatalError("Unexpected destination: \(segue.destination)")
                 }
                 
-                guard let selectedNewWordCell = sender as? NewWordTableViewCell else {
+                guard let selectedNewWordCell = sender as? WordTableViewCell else {
                     fatalError("Unexpected sender: \(String(describing: sender))")
                 }
                 
