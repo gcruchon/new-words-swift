@@ -6,11 +6,15 @@
 //  Copyright © 2018 Gilles Cruchon. All rights reserved.
 //
 
+import os.log
 import UIKit
 import SnapKit
 
 class WordTableViewCell: UITableViewCell {
+    
+    let MARGIN = 20
 
+    static let Identifier = "WordTableViewCell"
     lazy var wordLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
@@ -26,7 +30,6 @@ class WordTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configureSubviews()
     }
     
@@ -35,22 +38,46 @@ class WordTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool){
+        super.setEditing(editing, animated: animated)
+        
+        var offset = 0;
+        if(editing){
+            offset = 30
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.wordLabel.snp.updateConstraints { (make) -> Void in
+                make.left.equalTo(self).offset(self.MARGIN + offset)
+            }
+            self.definitionLabel.snp.updateConstraints { (make) -> Void in
+                make.left.equalTo(self).offset(self.MARGIN + offset)
+            }
+            self.layoutIfNeeded()
+        }
+    }
+    
     func configureSubviews() {
         self.addSubview(self.wordLabel)
         self.addSubview(self.definitionLabel)
         
         wordLabel.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(self).offset(20)
-            make.left.equalTo(self).offset(20)
-            make.right.equalTo(self).offset(-20)
+            make.top.equalTo(self).offset(MARGIN)
+            make.left.equalTo(self).offset(MARGIN)
+            make.right.equalTo(self).offset(-1 * MARGIN)
         }
         
         definitionLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(wordLabel.snp.bottom).offset(15)
-            make.left.equalTo(self).offset(20)
-            make.right.equalTo(self).offset(-20)
-            make.bottom.equalTo(self).offset(-20)
+            make.left.equalTo(self).offset(MARGIN)
+            make.right.equalTo(self).offset(-1 * MARGIN)
+            make.bottom.equalTo(self).offset(-1 * MARGIN)
         }
+    }
+    
+    
+    func configureWithNewWord(newWord: NewWord) {
+        wordLabel.text = newWord.word
+        definitionLabel.text = newWord.definition
     }
 
 

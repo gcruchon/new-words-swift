@@ -7,6 +7,8 @@ target 'NewWords' do
   use_frameworks!
 
   # Pods for NewWords
+  pod 'RxCocoa', '4.1.2'
+  pod 'RxSwift', '4.1.2'
   pod 'SnapKit', '4.0.0'
 
   target 'NewWordsTests' do
